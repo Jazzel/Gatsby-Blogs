@@ -3,17 +3,14 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {Box} from '@material-ui/core';
 
 class BlogPost extends Component {
   render() {
     const { title, body, heroImage } = this.props.data.contentfulBlogPost
     return (
       <Layout>
-        <SEO title="Blogs" />
-        <Box>
+        <SEO title={title} />
           <img src={heroImage.file.url} alt="blog" />
-        </Box>
         <div>
           <h1>{title}</h1>
           <div
